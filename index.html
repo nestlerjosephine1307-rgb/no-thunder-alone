@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Kein Gewitter Allein</title>
+
+  <!-- Lato Regular -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hintergrund Animation -->
+  <div class="background"></div>
+
+  <main id="app">
+
+    <!-- SCREEN 1 -->
+    <section class="screen active" id="start">
+      <img src="assets/logo.svg" class="logo">
+      <button onclick="goTo('counter')">Start</button>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section class="screen" id="counter">
+      <div class="timer-box">
+        <div class="timer">
+          <span class="label">Krise</span>
+          <span id="krise">5:00</span>
+        </div>
+
+        <div class="timer">
+          <span class="label">Burnout</span>
+          <span id="burnout">8:00</span>
+        </div>
+      </div>
+
+      <input type="number" id="fieldInput" placeholder="Feldnummer">
+      <button onclick="checkField()">Show</button>
+    </section>
+
+    <!-- SCREEN 3 -->
+    <section class="screen" id="event">
+      <div class="content" id="eventContent"></div>
+      <button onclick="goTo('counter')">Continue</button>
+    </section>
+
+    <!-- SCREEN 4 -->
+    <section class="screen" id="kriseScreen">
+      <span class="badge">Krise</span>
+      <div class="content" id="kriseContent"></div>
+      <button onclick="goTo('counter')">Continue</button>
+    </section>
+
+    <!-- SCREEN 5 -->
+    <section class="screen" id="burnoutScreen">
+      <span class="badge">Burnout</span>
+      <div class="content">
+        Die Belastung war zu groß. Das Gewitter hat sich zu lange gehalten.<br><br>
+        Wenn dieser Alarm ertönt, zeigt sich, was passiert, wenn Erschöpfung unbeachtet bleibt:
+        Der Weg wird kleiner. Ein Teil des Spielbretts und alle verbundenen Brücken müssen entfernt werden.
+        Das nächste Spielbrett-Teil wird aus dem Spiel entfernt und wird unbegehbar.
+        Falls ein Spieler darauf steht, ist das Spiel vorbei.
+      </div>
+      <button onclick="goTo('counter')">Continue</button>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
